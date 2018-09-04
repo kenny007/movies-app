@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-movie-filter',
+  selector: 'movie-filter',
   templateUrl: './movie-filter.component.html',
   styleUrls: ['./movie-filter.component.css']
 })
