@@ -7,12 +7,18 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
+import { MoviesComponent } from './movies/movies.component';
+import { MovieDetailComponent } from './movie-detail/movie-detail.component';
+import { MovieFilterComponent } from './movie-filter/movie-filter.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    BsNavbarComponent
+    BsNavbarComponent,
+    MoviesComponent,
+    MovieDetailComponent,
+    MovieFilterComponent
   ],
   imports: [
     BrowserModule,
