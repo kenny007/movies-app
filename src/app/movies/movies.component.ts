@@ -14,9 +14,7 @@ export class MoviesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    
     this.movies = movies.map((movie) => {
-      debugger;
       var newObj = Object.assign({}, movie);
       newObj.img = this.folderPath + movie.img
       return newObj;

@@ -1,29 +1,16 @@
-<div  class="card" style="width: 15rem;">
-  <img class="card-img-top" src="{{movie.img}}" alt="Card image cap">
-  <div class="card-body">
+<div  class="card shadow" style="width: 16rem;">
+    <a href="#" class="badge badge-primary badge-pill w-25">{{movie.rate}}</a>
+    <div class="inner">
+        <img class="card-img-top .img-fluid" src="{{movie.img}}" alt="Card image cap">
+    </div>
+  <div class="card-body text-center">
     <h5 class="card-title">{{ movie.name }}</h5>
     <p class="card-text">{{ movie.key }}</p>
   
   </div>
   <div *ngIf="showActions" class="card-footer">
-      <button *ngIf="getQuantity() === 0; else updateQuantity"
+      <button
       (click)="addToCart()"
       class="btn btn-secondary btn-block">Add to Favorite</button>
-      <ng-template #updateQuantity>
-          <div class="row no-gutters">
-              <div class="col-2">
-                  <button
-                  (click)="removeFromCart()"
-                  class="btn btn-secondary btn-block">-</button>
-              </div>
-              <div class="col text-center"> {{ getQuantity() }} in cart</div>
-              <div class="col-2">
-                  <button 
-                  (click)="addToCart()"
-                  class="btn btn-secondary btn-block">+</button>
-              </div>
-          </div>
-      </ng-template>
- 
   </div>
 </div>
