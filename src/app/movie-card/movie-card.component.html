@@ -5,13 +5,13 @@
     </div>
   <div class="card-body text-center">
     <h5 class="card-title">{{ movie.name }}</h5>
-    <p class="card-text">{{ movie.key }}</p>
+    <!-- <p class="card-text">{{ movie.key }}</p> -->
   
   </div>
   <div *ngIf="showActions" class="card-footer text-center">
         <ul class="list-inline">
                 <li *ngFor="let g of movie.genres" class="list-inline-item"> 
-                    <a href="#"> {{g}} </a> 
+                    <a href=""> {{g}} </a> 
                 </li>
         </ul>
   </div>

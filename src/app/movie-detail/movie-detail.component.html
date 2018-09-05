@@ -4,12 +4,12 @@
     <main class="card shadow">
         <div class="row no-gutters">
             <aside class="col-sm-6 border-right">
-                <div class="card-header">{{ movie.name}}</div>
+                <div class="card-header"><h4>{{ movie.name}}</h4></div>
     <article class="gallery-wrap"> 
     <div class="img-big-wrap">
       <div> <img src="{{ movie.img }}"></div>
-    </div> <!-- slider-product.// -->
-    </article> <!-- gallery-wrap .end// -->
+    </div> 
+    </article>
             </aside>
             <aside class="col-sm-6">
     <article class="card-body">
@@ -17,43 +17,39 @@
             <dt>Popularity #{{ movie.id}}</dt>
         </dl>
             <hr>
-    <dl>
-      <dt>Description</dt>
-      <dd><p> {{ movie.description}}</p></dd>
-    </dl>
-    <hr>
-
-    <dl class="row">
-      <dt class="col-sm-3">Length</dt>
-      <dd class="col-sm-9">{{movie.length}}</dd>
-    
-      <dt class="col-sm-3">Genre</dt>
-      <dd class="col-sm-9">
+      <dl class="row">
+        <dt class="col-sm-4">Running time</dt>
+        <dd class="col-sm-8">{{movie.length}}</dd>
+        
+        <dt class="col-sm-4">Genre</dt>
+        <dd class="col-sm-8">
             <ul class="list-inline">
                 <li *ngFor="let g of movie.genres" class="list-inline-item"> {{g}} </li>
             </ul>
-      </dd>
-    </dl>
-    <div class="rating-wrap">
-    
-    </div> <!-- rating-wrap.// -->
-    <hr>
-        <div class="row">
-            <div class="col-sm-7">
-                <dl class="dlist-inline">
-                      <dt>Rating: </dt>
-                    <dd>
-                            <ngb-rating [(rate)]="movie.rate"></ngb-rating>
-                    </dd>
-                </dl>  <!-- item-property .// -->
-            </div> <!-- col.// -->
-        </div> <!-- row.// -->
+        </dd>
+          
         <hr>
-        <a href="#" class="btn  btn-warning"> <i class="fa fa-envelope"></i> Play </a>
-        <a href="#" class="btn  btn-outline-warning"> Preview </a>
-    <!-- short-info-wrap .// -->
-    </article> <!-- card-body.// -->
-            </aside> <!-- col.// -->
-        </div> <!-- row.// -->
-    </main> <!-- card.// -->
+        <dt class="col-sm-4">Rating </dt>
+        <dd class="col-sm-8">
+            <ngb-rating [(rate)]="movie.rate"></ngb-rating>
+        </dd>
+        
+      </dl>
+         <hr>
+
+    <dl>
+    <dt>Description</dt>
+    <hr>
+    <dd ><p> {{ movie.description}}</p></dd>
+    </dl>
+
+    <hr>
+
+    <a href="#" class="btn  btn-warning"> <i class="fa fa-envelope"></i> Play </a>
+    <a href="#" class="btn  btn-outline-warning"> Preview </a>
+  
+    </article>
+            </aside> 
+        </div>
+    </main>
     

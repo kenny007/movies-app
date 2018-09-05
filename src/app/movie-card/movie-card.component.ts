@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class MovieCardComponent implements OnInit {
   @Input('movie') movie : IMovie;
   @Input('show-actions') showActions = true;
+  @Input('genreFilter') genreFilter;
 
   constructor(private router: Router) { }
     
@@ -22,8 +23,12 @@ export class MovieCardComponent implements OnInit {
     }
 
     addToFavorite(){
-
+0
     }
+
+   filterMovie(genre){
+      this.genreFilter(genre);
+   }
 
     addToCartFavorite(){
       //this.cartService.addToCart(this.product);

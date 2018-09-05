@@ -12,6 +12,7 @@ import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MovieFilterComponent } from './movie-filter/movie-filter.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MoviesService } from './movies.service';
+import { PaginationComponent } from './shared/pagination/pagination.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MoviesService } from './movies.service';
     MoviesComponent,
     MovieDetailComponent,
     MovieFilterComponent,
-    MovieCardComponent
+    MovieCardComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,10 @@
+import { genreType } from './../../content/movie.model';
 import { MoviesService } from './../movies.service';
 import { Component, OnInit } from '@angular/core';
 import { movies } from './../../content/movie.mock-data';
 import {IMovie} from './../../content/movie';
+import { isNull } from 'util';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-movies',
@@ -10,36 +13,65 @@ import {IMovie} from './../../content/movie';
 })
 export class MoviesComponent {
   folderPath:string = "./assets/movie-covers/";
-  _listFilter: string;
-  // filter: any = {
-  // }
-
-  get listFilter(): string {
-    return this._listFilter;
-  }
-
-  set listFilter(value: string){
-     debugger;
-     this._listFilter = value;
-     this.filteredMovies = this.listFilter ? this.performFilter(this.listFilter) : this.movies;
-  }
-
+  genres:any =  Object.values(genreType);
+  private readonly PAGE_SIZE = 9;
   filteredMovies: IMovie[];
   movies: IMovie[] = [];
 
+  query: any = {
+    pageSize: this.PAGE_SIZE
+  };
+
+  // set listFilter(value: string){
+  //    debugger;
+  //    this.query.page = 1;
+  //    this.query._listFilter = value;
+  //    this.filteredMovies = this.listFilter ? this.performFilter(this.listFilter) : this.movies;
+  // }
+
   constructor(private moviesService: MoviesService) { 
-    this.movies = this.moviesService.getMovies();
+    this.movies = this.populateMovies();
     this.filteredMovies = this.movies;
-    this.listFilter = '';
-    // this.movies = this.moviesService.getMovies();
+  }
+
+  searchClick(){
+  debugger;
+  var movies = this.movies; 
+    if(this.query.name)
+    movies = movies.filter(m => m.name.toLocaleLowerCase()
+          .indexOf(this.query.name.toLocaleLowerCase())!== -1);
+
+    if(this.query.genre)
+    movies = movies.filter(m => m.genres.indexOf(this.query.genre) > -1)
+
+    this.filteredMovies = movies;
+    return this.filteredMovies;
+  }
+  
+  movieNameEmpty(){
+    if(this.query.name == ''){
+      this.filteredMovies = this.searchClick()
+    }
+  }
+
+  populateMovies(){
+    return this.moviesService.getMovies(this.query);
+  }
+
+
+  onPageChange(page){
+    this.query.page = page;
+    this.populateMovies();
    }
 
-  performFilter(filterBy: string): IMovie[]{
-  filterBy = filterBy.toLocaleLowerCase();
-  return this.movies.filter((movie: IMovie) => movie.name.toLocaleLowerCase().indexOf(filterBy) !== -1)
+  resetFilter(){
+    this.query = {
+      page: 1,
+      pageSize: this.PAGE_SIZE
+    };
+    this.populateMovies();
   }
  
-
   // ngOnInit() {
   //   this.movies = this.moviesService.getMovies();
   // }
