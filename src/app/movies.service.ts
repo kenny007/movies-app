@@ -5,8 +5,7 @@ import { IMovie } from '../content/movie';
 
 @Injectable()
 export class MoviesService {
-  folderPath:string = "./../../content/assets/images/movie-covers/";
-
+  folderPath:string = './assets/movie-covers/'
   constructor() { }
 
   getMovies(){

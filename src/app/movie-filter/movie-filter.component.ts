@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'movie-filter',
   templateUrl: './movie-filter.component.html',
-  styleUrls: ['./movie-filter.component.css']
+  styleUrls: ['./movie-filter.component.scss']
 })
 export class MovieFilterComponent implements OnInit {
 

@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'movie-card',
   templateUrl: './movie-card.component.html',
-  styleUrls: ['./movie-card.component.css']
+  styleUrls: ['./movie-card.component.scss']
 })
 export class MovieCardComponent implements OnInit {
   @Input('movie') movie : IMovie;
