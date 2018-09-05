@@ -11,6 +11,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
 import { MovieFilterComponent } from './movie-filter/movie-filter.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
+import { MoviesService } from './movies.service';
 
 
 @NgModule({
@@ -27,12 +28,10 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
     HttpClientModule,
     RouterModule.forRoot([
       {path:'', component: MoviesComponent },
-      {path:'detials', component: MoviesComponent},
-      {path:'favorites', component: MoviesComponent},
-      {path:'login', component: MoviesComponent}
+      {path:'movies/:key', component: MovieDetailComponent }
     ])
   ],
-  providers: [],
+  providers: [MoviesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

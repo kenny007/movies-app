@@ -1,4 +1,4 @@
-<div  class="card shadow" style="width: 16rem;">
+<div (click)="viewDetail()" class="card shadow" style="width: 16rem;">
     <a href="#" class="badge badge-primary badge-pill w-25">{{movie.rate}}</a>
     <div class="inner">
         <img class="card-img-top .img-fluid" src="{{movie.img}}" alt="Card image cap">
@@ -8,9 +8,11 @@
     <p class="card-text">{{ movie.key }}</p>
   
   </div>
-  <div *ngIf="showActions" class="card-footer">
-      <button
-      (click)="addToCart()"
-      class="btn btn-secondary btn-block">Add to Favorite</button>
+  <div *ngIf="showActions" class="card-footer text-center">
+        <ul class="list-inline">
+                <li *ngFor="let g of movie.genres" class="list-inline-item"> 
+                    {{g}} 
+                </li>
+        </ul>
   </div>
 </div>

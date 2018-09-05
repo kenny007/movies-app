@@ -10,12 +10,17 @@
 .inner{
     overflow: hidden;
 }
-img {
 
-}
 .inner img {
     transition: all 1.5s ease;
 }
 .inner:hover img {
-    transform: scale(1.5)
+    transform: scale(1.2)
+}
+
+ul li::after {
+    content: "| "
+}
+ul li:last-child::after {
+content: ""
 }
