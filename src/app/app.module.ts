@@ -26,6 +26,7 @@ import { MoviesService } from './movies.service';
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgbModule.forRoot(),
     RouterModule.forRoot([
       {path:'', component: MoviesComponent },
       {path:'movies/:key', component: MovieDetailComponent }

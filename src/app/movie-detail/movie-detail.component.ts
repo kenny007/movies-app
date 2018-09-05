@@ -2,6 +2,7 @@ import { IMovie } from './../../content/movie';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MoviesService } from '../movies.service';
+import {NgbRating} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-movie-detail',

@@ -24,11 +24,11 @@
     <hr>
 
     <dl class="row">
-      <dt class="col-sm-6">Length</dt>
-      <dd class="col-sm-6">{{movie.length}}</dd>
+      <dt class="col-sm-3">Length</dt>
+      <dd class="col-sm-9">{{movie.length}}</dd>
     
-      <dt class="col-sm-6">Genre</dt>
-      <dd class="col-sm-6">
+      <dt class="col-sm-3">Genre</dt>
+      <dd class="col-sm-9">
             <ul class="list-inline">
                 <li *ngFor="let g of movie.genres" class="list-inline-item"> {{g}} </li>
             </ul>
@@ -43,7 +43,7 @@
                 <dl class="dlist-inline">
                       <dt>Rating: </dt>
                     <dd>
-                   
+                            <ngb-rating [(rate)]="movie.rate"></ngb-rating>
                     </dd>
                 </dl>  <!-- item-property .// -->
             </div> <!-- col.// -->
