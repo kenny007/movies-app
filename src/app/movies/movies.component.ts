@@ -12,9 +12,8 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./movies.component.scss']
 })
 export class MoviesComponent {
-  folderPath:string = "./assets/movie-covers/";
   genres:any =  Object.values(genreType);
-  private readonly PAGE_SIZE = 9;
+  private readonly PAGE_SIZE = 8;
   filteredMovies: IQuery = {
     totalItems: 0,
     movies: []
@@ -56,18 +55,12 @@ export class MoviesComponent {
   }
 
   onPageChange(page){
-    debugger;
     this.query.page = page;
     let result = this.populateMovies();
     this.filteredMovies.movies =  result.movies;
    }
 
-  // ngOnInit() {
-  //   this.movies = this.moviesService.getMovies(this.query);
-  // }
-  
   genreClick(product){
-    debugger;
     this.movies = this.movies.filter((movie) => {
       movie.genres.filter((g) => { g === product})
     })

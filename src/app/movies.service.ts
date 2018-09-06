@@ -7,8 +7,7 @@ export class MoviesService {
   constructor() { }
 
   getMovies(query: any){
-    debugger;
-     let fixedMovies = movies;
+    let fixedMovies = movies;
     let movieLength = fixedMovies.length;
     let startIndex = query.pageSize * (query.page - 1);
     let allMovies = fixedMovies.slice(startIndex, query.pageSize + startIndex);
