@@ -1,6 +1,6 @@
-# MoviesApp
+# Movies Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.6.
+Visit url for deployed a live demo  `https://betssongroupmoviesapp.firebaseapp.com/`
 
 ## Development server
 
