@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MovieCardComponent } from './movie-card.component';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('MovieCardComponent', () => {
   let component: MovieCardComponent;
@@ -8,6 +9,7 @@ describe('MovieCardComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA ],
       declarations: [ MovieCardComponent ]
     })
     .compileComponents();

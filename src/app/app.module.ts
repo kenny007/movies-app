@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule} from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -21,7 +21,6 @@ import { PaginationComponent } from './shared/pagination/pagination.component';
     BsNavbarComponent,
     MoviesComponent,
     MovieDetailComponent,
-    MovieFilterComponent,
     MovieCardComponent,
     PaginationComponent
   ],
@@ -34,6 +33,10 @@ import { PaginationComponent } from './shared/pagination/pagination.component';
       {path:'', component: MoviesComponent },
       {path:'movies/:key', component: MovieDetailComponent }
     ])
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,  
+    NO_ERRORS_SCHEMA
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent]

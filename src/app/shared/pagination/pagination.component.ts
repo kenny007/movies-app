@@ -2,7 +2,7 @@ import {
 	Component,
 	Input, 
 	Output, 
-	EventEmitter }     from '@angular/core';
+	EventEmitter,  NgModule, NO_ERRORS_SCHEMA }     from '@angular/core';
 import { OnChanges } from '@angular/core';
 
 @Component({

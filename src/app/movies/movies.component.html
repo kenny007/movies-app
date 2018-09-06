@@ -21,6 +21,7 @@
         </div>
     </form>
    <br>
+   <pagination [total-items]="filteredMovies.totalItems" [page-size]="query.pageSize" (page-changed)="onPageChange($event)"></pagination>
     <div class="row">
       <ng-container *ngFor="let movie of filteredMovies.movies; let i = index">
           <div class="col">

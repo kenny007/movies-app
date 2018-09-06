@@ -1,6 +1,6 @@
 import { genreType } from './../../content/movie.model';
 import { MoviesService } from './../movies.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { movies } from './../../content/movie.mock-data';
 import { IMovie, IQuery } from './../../content/movie';
 import { isNull } from 'util';
@@ -9,7 +9,8 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-movies',
   templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.scss']
+  styleUrls: ['./movies.component.scss'],
+  providers: [MoviesService]
 })
 export class MoviesComponent {
   genres:any =  Object.values(genreType);
