@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieDetailComponent } from './movie-detail/movie-detail.component';
-import { MovieFilterComponent } from './movie-filter/movie-filter.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MoviesService } from './movies.service';
 import { PaginationComponent } from './shared/pagination/pagination.component';
