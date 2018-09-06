@@ -1,6 +1,6 @@
 # Movies Application
 
-Visit url for deployed a live demo  `https://betssongroupmoviesapp.firebaseapp.com/`
+Visit url for deployed a live demo  https://betssongroupmoviesapp.firebaseapp.com/
 
 ## Development server
 
