@@ -8,13 +8,18 @@ export class MoviesService {
   constructor() { }
 
   getMovies(query: any){
+    debugger;
      let fixedMovies = movies.map((movie) => {
       var newObj = Object.assign({}, movie);
       newObj.img = this.folderPath + movie.img
       return newObj;
     });
+    let movieLength = fixedMovies.length;
+    let startIndex = query.pageSize * (query.page - 1);
+    let allMovies = fixedMovies.slice(startIndex, query.pageSize + startIndex);
     //fixedMovies.splice(query.pageSize * query.page, query.pageSize);
-    return fixedMovies;
+    return  {totalItems: movieLength, movies: allMovies }
+    //fixedMovies;
   }
 
   getMovie(key: string){

@@ -1,3 +1,8 @@
+export interface IQuery {
+    totalItems: number,
+    movies: IMovie[]
+}
+
 
 export interface IMovie {
     id : number;
