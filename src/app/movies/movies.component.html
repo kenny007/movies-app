@@ -1,18 +1,13 @@
 
 <div class="row">
-
- <!-- <div class="col-2">
-   <movie-filter></movie-filter>
- </div> -->
-  
-  <div class="col">
+    <div class="col">
     <form>
-        <div class="form-row">
-          <div class="offset-md-2 col-5">
-              <input type="text" class="form-control mb-3 mr-sm-3" name="name" [(ngModel)]="query.name" 
+        <div class="row">
+          <div class="offset-md-2 col-md-5">
+              <input type="text" class="form-control" name="name" [(ngModel)]="query.name" 
               (ngModelChange)="movieNameEmpty()" (keyup.enter)="searchClick()"  placeholder="Search a movie">
           </div>
-          <div class="col-3">
+          <div class="col-md-3 mb-3">
             <select id="genre" name="genre" class="form-control" [(ngModel)]="query.genre" (change)="searchClick()">
                 <option value=""></option>
                 <option *ngFor="let g of genres" value="{{g}}"> {{g}}</option>
@@ -21,6 +16,7 @@
         </div>
     </form>
    <br>
+
    <pagination [total-items]="filteredMovies.totalItems" [page-size]="query.pageSize" (page-changed)="onPageChange($event)"></pagination>
     <div class="row">
       <ng-container *ngFor="let movie of filteredMovies.movies; let i = index">
@@ -28,7 +24,7 @@
             <movie-card [movie]="movie" [genreFilter]="performFilter" ></movie-card>
             
             </div>
-            <div *ngIf="(i+1) % 4 === 0" class="w-100"></div>
+            <!-- <div *ngIf="(i+1) % 4 === 0" class="w-100"></div> -->
       </ng-container>
     </div>
      
