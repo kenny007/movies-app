@@ -7,6 +7,7 @@
               <input type="text" class="form-control" name="name" [(ngModel)]="query.name" 
               (ngModelChange)="movieNameEmpty()" (keyup.enter)="searchClick()"  placeholder="Search a movie">
           </div>
+          <br>
           <div class="col-md-3 mb-3">
             <select id="genre" name="genre" class="form-control" [(ngModel)]="query.genre" (change)="searchClick()">
                 <option value=""></option>
